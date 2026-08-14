@@ -18,7 +18,7 @@ export const ContactRsvp: React.FC = () => {
           <Phone size={12} className="sm:w-[14px] sm:h-[14px]" /> RSVP
         </div>
 
-        <h2 className="font-script text-3xl sm:text-4xl md:text-5xl text-[#d4c5f7] mb-2 sm:mb-3">
+        <h2 className="font-script text-3xl sm:text-4xl md:text-5xl animated-title-text animate-text-glow mb-2 sm:mb-3">
           Contact Us
         </h2>
         <p className="font-serif text-xs sm:text-sm text-[#E7D8FF]/70 italic tracking-wider mb-6 sm:mb-8 max-w-md mx-auto">

@@ -19,7 +19,7 @@ export const Footer: React.FC<FooterProps> = ({ details, onOpenRsvp }) => {
           H & P
         </div>
 
-        <h3 className="font-script text-3xl sm:text-4xl md:text-5xl text-[#d4c5f7]">
+        <h3 className="font-script text-3xl sm:text-4xl md:text-5xl animated-title-text animate-text-glow">
           {details.brideName} <span className="font-serif text-xl sm:text-2xl text-[#B8C0FF]">&</span> {details.groomName}
         </h3>
 

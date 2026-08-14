@@ -82,7 +82,7 @@ export const Hero: React.FC<HeroProps> = ({
         </div>
 
         {/* Couple Names — Animated */}
-        <h1 className={`font-script text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#d4c5f7] mb-3 sm:mb-4 tracking-wide drop-shadow-lg anim-base anim-blur-in ${isLoaded ? 'anim-visible' : ''}`} style={{ transitionDelay: '0.7s' }}>
+        <h1 className={`font-script text-5xl sm:text-6xl md:text-7xl lg:text-8xl animated-title-text animate-text-glow mb-3 sm:mb-4 tracking-wide drop-shadow-lg anim-base anim-blur-in ${isLoaded ? 'anim-visible' : ''}`} style={{ transitionDelay: '0.7s' }}>
           {details.groomName} <span className="font-serif text-3xl sm:text-4xl md:text-5xl text-[#B8C0FF] italic">&</span> {details.brideName}
         </h1>
 

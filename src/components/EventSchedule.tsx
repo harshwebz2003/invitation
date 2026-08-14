@@ -52,7 +52,7 @@ export const EventSchedule: React.FC<EventScheduleProps> = ({ details }) => {
         <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1 rounded-full bg-[#B8C0FF]/10 border border-[#B8C0FF]/30 text-[#B8C0FF] text-[10px] sm:text-xs font-semibold uppercase tracking-widest mb-3">
           <Calendar size={12} className="sm:w-[14px] sm:h-[14px]" /> Schedule & Location
         </div>
-        <h2 className="font-script text-4xl sm:text-5xl md:text-6xl text-[#d4c5f7] mb-3 sm:mb-4">
+        <h2 className="font-script text-4xl sm:text-5xl md:text-6xl animated-title-text animate-text-glow mb-3 sm:mb-4">
           Events & Celebrations
         </h2>
         <p className="font-serif text-[#E7D8FF]/70 text-sm sm:text-base md:text-lg italic max-w-lg mx-auto">
