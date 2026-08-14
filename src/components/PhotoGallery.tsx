@@ -69,6 +69,8 @@ export const PhotoGallery: React.FC = () => {
             <img
               src={item.url}
               alt={item.title}
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover filter brightness-95 group-hover:brightness-110 group-hover:scale-110 transition-all duration-700"
             />
 

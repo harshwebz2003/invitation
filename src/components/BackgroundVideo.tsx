@@ -9,8 +9,8 @@ interface BackgroundVideoProps {
 
 export const BackgroundVideo: React.FC<BackgroundVideoProps> = ({
   videoSrc = '/media/bg-video.mp4',
-  overlayOpacity = 0.5,
-  blurAmount = 'backdrop-blur-sm',
+  overlayOpacity = 0.45,
+  blurAmount = 'backdrop-blur-none',
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(true);
@@ -45,7 +45,7 @@ export const BackgroundVideo: React.FC<BackgroundVideoProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 w-full h-full z-0 overflow-hidden pointer-events-none select-none">
+    <div className="fixed inset-0 w-full h-full z-0 overflow-hidden pointer-events-none select-none transform-gpu">
       {!videoError ? (
         <video
           ref={videoRef}
@@ -54,23 +54,22 @@ export const BackgroundVideo: React.FC<BackgroundVideoProps> = ({
           loop
           muted={isMuted}
           playsInline
+          preload="auto"
           onError={() => setVideoError(true)}
-          className="absolute inset-0 w-full h-full object-cover scale-105 filter brightness-90 transition-all duration-700"
+          className="absolute inset-0 w-full h-full object-cover scale-105 filter brightness-90 transition-opacity duration-500 will-change-transform transform-gpu"
         />
       ) : (
-        /* Fallback luxury ambient mesh background if video cannot be rendered */
-        <div className="absolute inset-0 bg-gradient-to-br from-neutral-950 via-amber-950/20 to-black animate-pulse-glow" />
+        /* Fallback ambient gradient if video error */
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0f0f23] via-[#1a1a3e] to-black" />
       )}
 
-      {/* Dark Luxury Overlay & Glassmorphism */}
+      {/* Dark Overlay with GPU acceleration */}
       <div 
-        className={`absolute inset-0 transition-all duration-500 ${blurAmount}`}
+        className={`absolute inset-0 transition-all duration-300 transform-gpu ${blurAmount}`}
         style={{
-          backgroundColor: `rgba(11, 9, 10, ${overlayOpacity})`,
-          backgroundImage: 'radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.08) 0%, rgba(0, 0, 0, 0.6) 100%)'
+          backgroundColor: `rgba(15, 15, 35, ${overlayOpacity})`,
         }}
       />
-
 
       {/* Floating Control Hub (Interactive element overlay) */}
       <div className="absolute bottom-6 left-6 z-20 pointer-events-auto flex items-center gap-2">

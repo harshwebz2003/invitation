@@ -143,6 +143,8 @@ export const EventSchedule: React.FC<EventScheduleProps> = ({ details }) => {
               <img
                 src={img.url}
                 alt={img.title}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover filter brightness-95 group-hover:brightness-110 group-hover:scale-110 transition-all duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3 text-left">
